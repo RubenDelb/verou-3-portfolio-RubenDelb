@@ -95,6 +95,12 @@
   }
 }
 
+@keyframes shrink-grow {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.8);}
+  100% { transform: scale(1);}
+}
+
 .app__header-circles {
   flex: 0.75;
   display: flex;
@@ -115,6 +121,10 @@
     img {
       width: 60%;
       height: 60%;
+    }
+
+    &:hover {
+      animation: shrink-grow 1s ease;
     }
   }
 
