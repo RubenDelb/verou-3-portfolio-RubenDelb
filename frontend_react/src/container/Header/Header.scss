@@ -59,6 +59,9 @@
   align-items: flex-end;
   flex-direction: column;
 
+  .badge-cmp {
+    margin: 3rem 0;
+  }
   .badge-cmp,
   .tag-cmp {
     padding: 1rem 2rem;
