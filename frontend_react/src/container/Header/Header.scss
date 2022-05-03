@@ -32,7 +32,7 @@
   }
 
   @media screen and (max-width: 450px) {
-    padding: 6rem 1rem 2rem;
+    padding: 2rem 1rem 2rem;
   }
 }
 
@@ -65,6 +65,10 @@
 
     @media screen and (max-width: 1200px) {
       margin-left: 0px;
+    }
+
+    @media screen and (max-width: 400px) {
+      margin-left: -40px;
     }
 
     .app__image-bubble {
@@ -196,14 +200,7 @@
   }
 
   @media screen and (max-width: 1200px) {
-    width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-left: 0;
-
-    div {
-      margin: 1rem;
-    }
+    display: none;
   }
 }
 
