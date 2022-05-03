@@ -6,13 +6,15 @@ import { images } from '../../constants';
 import './Navbar.scss';
 
 const Navbar = () => {
-  const [toggle, setToggle] = useState(false)
+  const [toggle, setToggle] = useState(false);
+  
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
         <img src={images.logo} alt="logo" />
       </div>
       <ul className="app__navbar-links">
+        {/* Create a link to every section on the page */}
         {['home', 'about', 'work', 'skills', 'contact' ].map((item) => (
           <li className="app__flex p-text" key={`link-${item}`}>
             <div />
@@ -22,11 +24,14 @@ const Navbar = () => {
       </ul>
 
       <div className="app__navbar-menu">
+        {/* Hamburger-menu icon */}
           <HiMenuAlt4 onClick={() => setToggle(true)}/>
+          {/* if 'toggle' is true, the element right after && will appear in the output */}
           { toggle && (
             <motion.div 
               whileInView={{ y: [-100,0], x: [300,0], opacity: [0, 1] }}
               transition={{ duration: 0.85, ease: "easeOut"}}>
+                {/* X-icon to close the menu */}
                 <HiX onClick={() => setToggle(false)} />
                 <ul>
                   {['home', 'about', 'work', 'skills', 'contact' ].map((item) => (
