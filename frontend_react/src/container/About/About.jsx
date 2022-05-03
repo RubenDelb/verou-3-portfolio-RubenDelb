@@ -6,15 +6,10 @@ import { images } from '../../constants'
 import './About.scss';
 import { urlFor, client } from '../../client';
 
-// const abouts = [
-//   { title: 'Backend', description: 'I love to work with data and optimize performance', imgUrl: images.about02 },
-//   { title: 'Frontend', description: 'It\'s so pleasing to see code come to life', imgUrl: images.about03 },
-//   { title: 'Full Stack', description: 'Making the communication between front & backend is the best feeling in the world!', imgUrl: images.about01 },
-// ]
-
 const About = () => {
   const [abouts, setAbouts] = useState([]);
 
+  // Fetch all the 'abouts' from sanity-client with a query.
   useEffect(() => {
     const query = '*[_type == "abouts"]';
 
@@ -26,14 +21,15 @@ const About = () => {
   return (
     <>
       <h2 className="head-text">
-        I Know That
-        <span> Good Development </span>
+        Programming isn't about  
+        <span> What you know </span>
         <br />
-        means
-        <span> Good Business</span>
+        it's about
+        <span> What you can figure out</span>
       </h2>
 
       <div className="app__profiles">
+        {/* Create an animated card for each about that exists */}
         { abouts.map((about, index) => (
           <motion.div 
             whileInView={{ opacity: 1 }}
