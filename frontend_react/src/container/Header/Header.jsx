@@ -18,16 +18,25 @@ const scaleVariants = {
 const Header = () => {
   return (
     <div className="app__header app__flex">
+
       <motion.div 
-        whileInView={{ x: [-100, 0], opacity: [0, 1] }}
+        whileInView={{ opacity: [0, 1] }}
+        transition={{ duration: 1, delayChildren: 0.5 }}
+        className="app__header-img"
+      >
+        <img src={images.profile} alt="profile_bg" style={{ height: '90%' }}/> 
+      </motion.div>
+
+      <motion.div 
+        whileInView={{ x: [-150, 0], opacity: [0, 1] }}
         transition={{ duration: 1 }}
         className="app__header-info"
       >
         <div className="app__header-badge">
           <div className="badge-cmp app__flex">
-            <span>👋</span>
+            <img className="app__image-bubble" src={images.speechBubble} alt="" />
             <div style={{ marginLeft: 20 }}>
-              <p className="p-text">Hi, I am </p>
+              <p className="bg-text"> I am </p>
               <h1 className="head-text">Ruben</h1>
             </div>
           </div>
@@ -39,22 +48,7 @@ const Header = () => {
       </motion.div>
 
       <motion.div 
-        whileInView={{ opacity: [0, 1] }}
-        transition={{ duration: 1, delayChildren: 0.5 }}
-        className="app__header-img"
-      >
-        <img src={images.profile} alt="profile_bg" /> 
-        <motion.img 
-        whileInView={{ scale: [0, 1] }}
-        transition={{ duration: 1, ease: 'easeInOut' }}
-        src={images.circle}
-        alt="profile_circle"
-        className="overlay_circle"
-        />
-      </motion.div>
-      
-      <motion.div 
-        variant={scaleVariants}
+        // variant={scaleVariants}
         whileInView={scaleVariants.whileInView}
         className="app__header-circles"
       >
