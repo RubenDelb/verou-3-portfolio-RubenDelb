@@ -37,7 +37,7 @@ const Header = () => {
             <img className="app__image-bubble" src={images.speechBubble} alt="" />
             <div style={{ marginLeft: 20 }}>
               <p className="bg-text"> I am </p>
-              <h1 className="head-text">Ruben</h1>
+              <h1 className="head-text" style={{ color: '#005C7B'}}>Ruben</h1>
             </div>
           </div>
           <div className="tag-cmp app__flex">
@@ -48,11 +48,10 @@ const Header = () => {
       </motion.div>
 
       <motion.div 
-        // variant={scaleVariants}
-        whileInView={scaleVariants.whileInView}
+        whileInView={scaleVariants.whileInView} // Used a variable to set a lot of properties
         className="app__header-circles"
       >
-        { [images.laravel, images.react, images.sass].map((circle, index) => (
+        { [images.react, images.laravel, images.sass].map((circle, index) => (
           <div className="circle-cmp app__flex" key={`circle-${index}`}>
             <img src={circle} alt="" />
           </div>
