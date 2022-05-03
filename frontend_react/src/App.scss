@@ -59,6 +59,20 @@
         text-transform: uppercase;
         color: var(--black-color);
     }
+
+    .copyright-dashes {
+        display: none;
+
+        @media screen and (max-width: 600px) {
+            display: inline;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        justify-content: center;
+        align-items: center;
+        display: inline;
+        text-align: center;
+    }
 }
 
 .head-text {
@@ -89,6 +103,13 @@
 
     @media screen and (min-width: 2000px) {
         font-size: 1.75rem;
+    }
+}
+
+.p-inline {
+    @media screen and (max-width: 600px) {
+        display: inline;
+        text-align: center;
     }
 }
 
@@ -203,7 +224,7 @@
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
 
     .app__navigation,
     .app__social {
