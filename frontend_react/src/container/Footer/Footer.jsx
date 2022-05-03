@@ -7,10 +7,10 @@ import './Footer.scss';
 
 const Footer = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [isFormSubmitted, setisFormSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false); // To be used to change the value of the 'send'-button
 
-  const { name, email, message } = formData;
+  const { name, email, message } = formData; // This is to destructure the formData for later use.
 
   const handleChangeInput = (e) => {
     const { name, value  } = e.target;
@@ -18,6 +18,7 @@ const Footer = () => {
     setFormData({ ...formData, [name]: value });
   }
 
+  // All messages sent through the form will be arriving as a new entry in sanity in the 'contact'-schema.
   const handleSubmit = () => {
     setLoading(true);
 
@@ -28,10 +29,10 @@ const Footer = () => {
       message: message,
     }
 
-    client.create(contact)
+    client.create(contact) // Create new entry in sanity
     .then(() => {
       setLoading(false);
-      setisFormSubmitted(true);
+      setIsFormSubmitted(true); // Show success-message
     })
   }
 
@@ -44,13 +45,10 @@ const Footer = () => {
           <img src={images.email} alt="email" />
           <a className="p-text" href="mailto:ruben.delbrassine@gmail.com" >ruben.delbrassine@gmail.com</a>
         </div>
-        <div className="app__footer-card">
-          <img src={images.mobile} alt="mobile" />
-          <a className="p-text" href="tel:+32 000 00 00 00" >+32 000 00 00 00</a>
-        </div>
       </div>
 
-      { !isFormSubmitted ? 
+      {/* Check if form is submitted, if not, show form, if it's submitted, then show a success-message */}
+      { !isFormSubmitted ?
       <div className="app__footer-form app__flex">
         <div className="app__flex">
           <input className="p-text" type="text" placeholder="Your Name" name="name" value={name} onChange={handleChangeInput} />
@@ -64,7 +62,7 @@ const Footer = () => {
         <button type="button" className="p-text" onClick={handleSubmit}>{ loading ? 'Sending' : 'Send Message' }</button>
       </div>
       : <div>
-          <h3 className="head-text">Thank you for getting in touch.</h3>
+          <h3 className="app__footer-success-message">Thank you for getting in touch.</h3>
       </div>}
     </>
   )
