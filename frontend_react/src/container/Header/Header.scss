@@ -28,7 +28,7 @@
   }
 
   @media screen and (max-width: 1200px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   @media screen and (max-width: 450px) {
@@ -55,22 +55,47 @@
 .app__header-badge {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: column;
 
   .badge-cmp {
-    margin: 3rem 0;
+    margin-top: 2rem;
+    margin-left: -150px;
+
+    @media screen and (max-width: 1200px) {
+      margin-left: 0px;
+    }
+
+    .app__image-bubble {
+      width: 150px;
+    }
+
+    .bg-text {
+      font-size: 1.1rem;
+      color: var(--gray-color);
+      line-height: 1.5;
+
+      @media screen and (min-width: 2000px) {
+          font-size: 2rem;
+      }
+    }
   }
+
   .badge-cmp,
   .tag-cmp {
     padding: 1rem 2rem;
-    background: var(--white-color);
+    background: rgba(0, 0, 0, 0);
     border-radius: 15px;
     flex-direction: row;
     width: auto;
 
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    // box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .tag-cmp:nth-child(2) {
+        background: var(--white-color);
+
   }
 
   .tag-cmp {
@@ -130,40 +155,44 @@
       animation: shrink-grow 1s ease;
     }
   }
-
+  
   // circles with different height & width
-
   div:nth-child(1) {
+    margin-left: 3rem;
     width: 100px;
     height: 100px;
   }
 
   div:nth-child(2) {
-    margin: 1.75rem;
+    margin: 1.5rem;
     width: 150px;
     height: 150px;
   }
 
   div:nth-child(3) {
+    margin-left: 5rem;
     width: 70px;
     height: 70px;
   }
 
   @media screen and (min-width: 2000px) {
+    div:nth-child(1) {
+      // margin-left: 0;
+      width: 200px;
+      height: 200px;
+    }
+    
     div:nth-child(2) {
       width: 400px;
       height: 400px;
     }
 
     div:nth-child(3) {
+      // margin-left: 0;
       width: 170px;
       height: 170px;
     }
 
-    div:nth-child(1) {
-      width: 200px;
-      height: 200px;
-    }
   }
 
   @media screen and (max-width: 1200px) {
