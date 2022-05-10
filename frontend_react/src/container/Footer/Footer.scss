@@ -92,7 +92,7 @@
             background-color: var(--primary-color);
 
             font-family: var(--font-base);
-            color: var(--secondary-color);
+            color: #005C7B;
             outline: none;
         }
 
@@ -121,6 +121,7 @@
         cursor: pointer;
 
         &:hover {
+            transition: 0.5s;
             background-color: #2430af;
         }
     }
