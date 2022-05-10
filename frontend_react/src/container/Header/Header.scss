@@ -135,11 +135,11 @@
   }
 }
 
-@keyframes shrink-grow {
-  0% { transform: scale(1); }
-  50% { transform: scale(0.8);}
-  100% { transform: scale(1);}
-}
+// @keyframes shrink-grow {
+//   0% { transform: scale(1); }
+//   50% { transform: scale(0.8);}
+//   100% { transform: scale(1);}
+// }
 
 .app__header-circles {
   flex: 0.75;
@@ -163,9 +163,9 @@
       height: 60%;
     }
 
-    &:hover {
-      animation: shrink-grow 1s ease;
-    }
+    // &:hover {
+    //   animation: shrink-grow 1s ease;
+    // }
   }
   
   // circles with different height & width
