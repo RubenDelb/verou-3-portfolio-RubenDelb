@@ -94,6 +94,10 @@ const Work = () => {
           <div className="app__work-content app__flex">
             <h4 className="bold-text">{work.title}</h4>
             <p className="p-text" style={{ marginTop: 10 }}>{work.description}</p>
+            <div className="app__flex app__work-mobile-links">
+              <a href={work.projectLink} aria-label={work.title} target="_blank" rel="noreferrer"> <AiFillEye /> </a>
+              <a href={ work.codeLink } aria-label={work.title} target="_blank" rel="noreferrer"> <AiFillGithub /> </a>
+            </div>
 
             <div className="app__work-tag app__flex">
               <p className="p-text">{work.tags[0]}</p>
