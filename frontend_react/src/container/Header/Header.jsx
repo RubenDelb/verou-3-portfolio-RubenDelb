@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
-import { AppWrap } from '../../wrapper'
-import { images } from '../../constants'
+import { AppWrap } from '../../wrapper';
+import { images } from '../../constants';
 import './Header.scss';
 
 const scaleVariants = {
@@ -51,10 +51,23 @@ const Header = () => {
         whileInView={scaleVariants.whileInView} // Used a variable to set a lot of properties
         className="app__header-circles"
       >
-        { [images.react, images.laravel, images.sass].map((circle, index) => (
-          <div className="circle-cmp app__flex" key={`circle-${index}`}>
+        { [images.html, images.react, images.sass].map((circle, index) => (
+          <motion.div 
+            className="circle-cmp app__flex" 
+            key={`circle-${index}`}
+            drag
+            dragConstraints={{
+              top: 0,
+              right: 0,
+              bottom: 0,
+              left: 0,
+            }}
+            dragTransition={{ bounceStiffness: 500, bounceDamping: 15 }}
+            dragElastic={0.7}
+            whileTap={{ cursor: "grabbing" }}
+            >
             <img src={circle} alt="" />
-          </div>
+          </motion.div>
         )) }
       </motion.div>
     </div>
